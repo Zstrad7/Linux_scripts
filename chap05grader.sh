@@ -78,6 +78,11 @@ then
     echo "point added for alias mycommand='ls -la'"
     addpoint
     echo "$point"
+elif [  $(grep 'alias mycommand='ls -al'' $1 | wc -l) -ge 1 ]
+then
+    echo "point added for alias mycommand='ls -al'"
+    addpoint
+    echo "$point"    
 fi
 
 #2.9

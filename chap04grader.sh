@@ -163,26 +163,31 @@ then
     echo "point added for less file6_hard "
     addpoint
     echo "$point"
+
 elif [  $(grep 'cat file6_hard' $1 | wc -l) -ge 1 ]
 then
     echo "point added for cat file6_hard "
     addpoint
     echo "$point"
+
 elif [  $(grep 'more file6_hard' $1 | wc -l) -ge 1 ]
 then
     echo "point added for more file6_hard "
     addpoint
     echo "$point"
-if [  $(grep 'less file6_soft' $1 | wc -l) -ge 1 ]
+
+elif [  $(grep 'less file6_soft' $1 | wc -l) -ge 1 ]
 then
     echo "point added for less file6_soft "
     addpoint
     echo "$point"
+
 elif [  $(grep 'cat file6_soft' $1 | wc -l) -ge 1 ]
 then
     echo "point added for cat file6_soft "
     addpoint
     echo "$point"
+    
 elif [  $(grep 'more file6_soft' $1 | wc -l) -ge 1 ]
 then
     echo "point added for more file6_soft "

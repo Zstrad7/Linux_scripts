@@ -47,5 +47,6 @@ then
     echo "$point"
 fi
 
+#Outpoint of final points and what they should be
 echo "Total points in the end is: $point"
 echo "Total points should be: $finalpoint"
