@@ -9,7 +9,7 @@ finalpoint=
 #
 if [  $(grep '' $1 | wc -l) -ge 1 ]
 then
-    echo "point added for "
+    echo "point added for ---"
     addpoint
     echo "$point"
 fi
