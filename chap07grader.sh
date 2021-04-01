@@ -81,7 +81,7 @@ then
 fi
 
 #2.9
-if [  $(grep 'sample1=5' $1 | wc -l) -ge 1 ] && [ $(grep 'sample2=7' $1 | wc -l) ]
+if [  $(grep 'sample1=5' $1 | wc -l) -ge 1 ] && [ $(grep 'sample2=7' $1 | wc -l) -ge 1 ]
 then
     echo "point added for "
     addpoint

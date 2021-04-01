@@ -73,12 +73,12 @@ then
 fi
 
 #2.8
-if [  $(grep 'alias mycommand='ls -la'' $1 | wc -l) -ge 1 ]
+if [  $(grep "alias mycommand='ls -la'" $1 | wc -l) -ge 1 ]
 then
     echo "point added for alias mycommand='ls -la'"
     addpoint
     echo "$point"
-elif [  $(grep 'alias mycommand='ls -al'' $1 | wc -l) -ge 1 ]
+elif [  $(grep "alias mycommand='ls -al'" $1 | wc -l) -ge 1 ]
 then
     echo "point added for alias mycommand='ls -al'"
     addpoint
