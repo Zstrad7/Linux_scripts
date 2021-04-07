@@ -4,10 +4,18 @@ addpoint () {
 point=$(("$point"+1))
 }
 point=0
-finalpoint=5
+finalpoint=10
 
 #3.1
-if [  $(grep 'vi script3.sh' $1 | wc -l) -ge 1 ] && [  $(grep '() {' $1 | wc -l) -ge 1 ]
+if [  $(grep 'vi script3.sh' $1 | wc -l) -ge 1 ]
+then
+    echo "point added for script3"
+    addpoint
+    echo "$point"
+fi
+
+#3.1
+if [  $(grep '() {' $1 | wc -l) -ge 1 ]
 then
     echo "point added for script3"
     addpoint
@@ -15,7 +23,23 @@ then
 fi
 
 #3.2
-if [  $(grep 'int=14' $1 | wc -l) -ge 1 ] && [  $(grep 'int2=7 ' $1 | wc -l) -ge 1 ] && [  $(grep 'result=0' $1 | wc -l) -ge 1 ]
+if [  $(grep 'int=14' $1 | wc -l) -ge 1 ]
+then
+    echo "point added for variables"
+    addpoint
+    echo "$point"
+fi
+
+#3.2
+if [  $(grep 'int2=7 ' $1 | wc -l) -ge 1 ]
+then
+    echo "point added for variables"
+    addpoint
+    echo "$point"
+fi
+
+#3.2
+if [  $(grep 'result=0' $1 | wc -l) -ge 1 ]
 then
     echo "point added for variables"
     addpoint
@@ -23,7 +47,15 @@ then
 fi
 
 #3.3
-if [  $(grep 'result=$(( "$int1" * "$int2" ))' $1 | wc -l) -ge 1 ] && [  $(grep '$int1 * $int2 = $result' $1 | wc -l) -ge 1 ]
+if [  $(grep 'result=$(( "$int1" * "$int2" ))' $1 | wc -l) -ge 1 ]
+then
+    echo "point added for multiply function"
+    addpoint
+    echo "$point"
+fi
+
+#3.3
+if [  $(grep '$int1 * $int2 = $result' $1 | wc -l) -ge 1 ]
 then
     echo "point added for multiply function"
     addpoint
@@ -31,9 +63,17 @@ then
 fi
 
 #3.4
-if [  $(grep 'result=$(( "$int1" / "$int2" ))' $1 | wc -l) -ge 1 ] && [  $(grep '$int1 / $int1 = $result' $1 | wc -l) -ge 1 ]
+if [  $(grep 'result=$(( "$int1" / "$int2" ))' $1 | wc -l) -ge 1 ]
 then
-    echo "point added for ---"
+    echo "point added for divide function"
+    addpoint
+    echo "$point"
+fi
+
+#3.4
+if [  $(grep '$int1 / $int1 = $result' $1 | wc -l) -ge 1 ]
+then
+    echo "point added for divide function"
     addpoint
     echo "$point"
 fi

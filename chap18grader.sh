@@ -152,7 +152,7 @@ then
 fi
 
 #2.14
-if [  $(grep 'mkdir testtar' $1 | wc -l) -ge 1 ] && [  $(grep 'cd testtar' $1 | wc -l) -ge 1 ]
+if [  $(grep 'cd testtar' $1 | wc -l) -ge 1 ]
 then
     echo "point added for mkdir testtar & cd testtar"
     addpoint

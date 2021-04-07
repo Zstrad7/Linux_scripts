@@ -87,7 +87,7 @@ then
 fi
 
 #2.11
-if [  $(grep 'cp famous_ship famous_ships2' $1 | wc -l) -ge 1 ] && [  $(grep 'cat >> famous_ships2' $1 | wc -l) -ge 1 ]
+if [  $(grep 'cat >> famous_ships2' $1 | wc -l) -ge 1 ]
 then
     echo "point added for cp famous_ship famous_ships2 & "
     addpoint

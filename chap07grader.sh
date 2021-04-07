@@ -81,58 +81,58 @@ then
 fi
 
 #2.9
-if [  $(grep 'sample1=5' $1 | wc -l) -ge 1 ] && [ $(grep 'sample2=7' $1 | wc -l) -ge 1 ]
+if [  $(grep 'sample1=5' $1 | wc -l) -ge 1 ]
 then
-    echo "point added for "
+    echo "point added for variables"
     addpoint
     echo "$point"
 fi
 
 #2.10
-if [  $(grep 'echo $(( $sample1 + $sample2 ))' $1 | wc -l) -ge 1 ]
+if [  $(grep '+' $1 | wc -l) -ge 1 ]
 then
-    echo "point added for echo $(( $sample1 + $sample2 ))"
+    echo "point added for adding variables"
     addpoint
     echo "$point"
-elif [  $(grep 'echo $(( sample1 + sample2 ))' $1 | wc -l) -ge 1 ]
-then
-    echo "point added for echo $(( sample1 + sample2 ))"
-    addpoint
-    echo "$point"
+#elif [  $(grep 'echo $(( sample1 + sample2 ))' $1 | wc -l) -ge 1 ]
+#then
+#    echo "point added for echo $(( sample1 + sample2 ))"
+#    addpoint
+#    echo "$point"
 fi
 
 #2.11
-if [  $(grep 'echo $(( $sample1 / $sample2 ))' $1 | wc -l) -ge 1 ]
+if [  $(grep '/' $1 | wc -l) -ge 1 ]
 then
-    echo "point added for echo $(( \$\sample1 / \$\sample2 ))"
+    echo 'point added for dividing variables'
     addpoint
     echo "$point"
-elif [  $(grep 'echo $(( sample1 / sample2 ))' $1 | wc -l) -ge 1 ]
-then
-    echo "point added for echo $(( sample1 / sample2 ))"
-    addpoint
-    echo "$point"
+#elif [  $(grep 'echo $(( sample1 / sample2 ))' $1 | wc -l) -ge 1 ]
+#then
+#    echo "point added for echo $(( sample1 / sample2 ))"
+#    addpoint
+#    echo "$point"
 fi
 
 #2.12
-if [  $(grep 'echo \$ 8.00 / hour \(that’s my hourly wage\) \* 8 hours \* 5 days = \$ 350.00 / week \(did I do the math right\?\) ' $1 | wc -l) -ge 1 ]
+if [  $(grep 'that’s my hourly wage' $1 | wc -l) -ge 1 ]
 then
-    echo "8.00 / hour (that’s my hourly wage) * 8 hours * 5 days = $ 350.00 / week (did I do the math right?) "
+    echo "point added for escape expansion"
     addpoint
     echo "$point"
 fi
 
 #2.13
-if [  $(grep 'echo ‘$(( $sample1 + $sample2 ))’' $1 | wc -l) -ge 1 ]
+if [  $(grep '(( $sample1 + $sample2 ))' $1 | wc -l) -ge 1 ]
 then
-    echo "point added for echo ‘$(( \$\sample1 + \$\sample2 ))’"
+    echo "point added for displaying the equation"
     addpoint
     echo "$point"
-elif [  $(grep 'echo \$\(\( \$sample1 + \$sample2 \)\) ' $1 | wc -l) -ge 1 ]
-then
-    echo "point added for $(( \$\sample1 + \$\sample2 )) "
-    addpoint
-    echo "$point"    
+#elif [  $(grep 'echo \$\(\( \$sample1 + \$sample2 \)\) ' $1 | wc -l) -ge 1 ]
+#then
+#    echo "point added for $(( \$\sample1 + \$\sample2 )) "
+#    addpoint
+#    echo "$point"    
 fi
 
 #Outpoint of final points and what they should be

@@ -31,7 +31,7 @@ then
 fi
 
 #1.4
-if [  $(grep 'mkdir test_day8' $1 | wc -l) -ge 1 ] && [  $(grep 'touch file{01..20}' $1 | wc -l) -ge 1 ]
+if [  $(grep 'touch file{01..20}' $1 | wc -l) -ge 1 ]
 then
     echo "point added for mkdir test_day8 & touch file{01..20}"
     addpoint

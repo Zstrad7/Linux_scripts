@@ -7,7 +7,7 @@ point=0
 finalpoint=6
 
 #1.1
-if [  $(grep 'vi script1.sh' $1 | wc -l) -ge 1 ] && [  $(grep 'favorite' $1 | wc -l) -ge 2 ]
+if [  $(grep 'favorite' $1 | wc -l) -ge 2 ]
 then
     echo "point added for vi script1.sh"
     addpoint
